@@ -1,0 +1,42 @@
+body {
+  background-color: #fcf1f0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  background-color: #f9813a;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.post {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.post-title {
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #1a1c20;
+  color: white;
+  text-align: center;
+  font-weight: 300;
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  margin-top: 1.3rem;
+}
+
+.composer {
+  margin-top: 50px;
+  text-align: center;
+}

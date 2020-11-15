@@ -1,0 +1,68 @@
+<%- include('header'); -%>
+
+<body>
+  <% if (compose == "1") { %>
+  <form class="container compose" method="POST">
+    <span>Title</span>
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-lg"
+      />
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Details</span>
+      </div>
+      <textarea
+        name="post"
+        class="form-control"
+        aria-label="With textarea"
+      ></textarea>
+    </div>
+  </form>
+  <% }else{ %>
+  <form class="container composer" action="/compose" method="POST">
+    <button class="btn btn-success" button="button" value="compose">
+      Compose
+    </button>
+  </form>
+  <% } %>
+
+  <div class="container post">
+    <h1 class="post-title"><%= title %></h1>
+    <p class="post-content">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </p>
+  </div>
+
+  <div class="container post">
+    <h1 class="post-title">Day 2</h1>
+    <p class="post-content">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </p>
+  </div>
+</body>
+
+<%- include('footer'); -%>
