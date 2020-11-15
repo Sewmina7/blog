@@ -2,19 +2,21 @@
 
 <body>
   <% if (compose == "1") { %>
-  <form class="container compose" method="POST">
-    <span>Title</span>
+  <br />
+  <form class="container compose" method="POST" action="/composed">
     <div class="input-group input-group-lg">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
       </div>
       <input
+        name="title"
         type="text"
         class="form-control"
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-lg"
       />
     </div>
+    <br />
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">Details</span>
@@ -25,44 +27,39 @@
         aria-label="With textarea"
       ></textarea>
     </div>
+    <br />
+    <button
+      class="btn btn-success"
+      type="submit"
+      name="button"
+      value="composed"
+    >
+      Compose
+    </button>
+    <button class="btn btn-danger" type="submit" name="button" value="cancel">
+      Cancel
+    </button>
   </form>
   <% }else{ %>
   <form class="container composer" action="/compose" method="POST">
     <button class="btn btn-success" button="button" value="compose">
+      <i class="fas fa-edit"></i>
       Compose
     </button>
   </form>
+  <% } %> <% for (let i = 0; i < titles.length; i++){ %>
+  <div class="container post">
+    <h1 class="post-title"><%= titles[i] %></h1>
+    <p class="post-content"><%= posts[i] %></p>
+  </div>
+  <% } %> <% for (let i = 0; i < errors.length; i++){ %>
+  <div class="alert alert-danger" role="alert"><%= errors[i] %></div>
+  <% } %> <% for (let i = 0; i < success.length; i++){ %>
+  <div class="alert alert-success" role="alert"><%= success[i] %></div>
   <% } %>
 
-  <div class="container post">
-    <h1 class="post-title"><%= title %></h1>
-    <p class="post-content">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
-  </div>
-
-  <div class="container post">
-    <h1 class="post-title">Day 2</h1>
-    <p class="post-content">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
-  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js" charset="utf-8"></script>
 </body>
 
 <%- include('footer'); -%>
